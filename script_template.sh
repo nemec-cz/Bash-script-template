@@ -2,8 +2,8 @@
 
 #============================================================
 ## debug tools
-# set -x	#Print all  trace and arguments
-# trap -l	#List of signals
+# set -x	#print all  trace and arguments
+# trap -l	#list of signals
 
 #============================================================
 ## variables definition
