@@ -20,20 +20,20 @@
 
 #============================================================
 ## default variables
-set -o nounset			#all variable must be defined
+set -o nounset				#all variable must be defined
 emial_notification=no		#yes/no (if yes script sends email if error (cron script))
-log_interactive=yes		#yes/no (if yes logs are print to screen also)
+log_interactive=yes			#yes/no (if yes logs are print to screen also)
 error_stop=no           	#yes/no (if yes script stops after error)
 script_name=`basename $0`
 script_path=`dirname $(readlink -nf $0)`
 if ! [ -d "${script_path}/tmp" ]; then mkdir ${script_path}/tmp ; fi
 script_path_temp=${script_path}/tmp		#folder for temp files
 if ! [ -d "${script_path}/log" ]; then mkdir ${script_path}/log ; fi
-log_path=${script_path}/log			#folder for log files
+log_path=${script_path}/log				#folder for log files
 log_file=${log_path}/${script_name}.log
 
 #============================================================
-## test if script is not running already
+## test if script is running already
 if [ `ps -e | grep -c ${script_name}` -gt 2 ]; then
         echo "[`date +"%Y-%m-%d %H:%M:%S"` $BASHPID] [E] Script ${script_name} is already running. Exit!" >> ${log_file}
 	if [ "$log_interactive" = "yes" ]; then echo "[E] Script ${script_name} is already running. Exit!" ; fi
