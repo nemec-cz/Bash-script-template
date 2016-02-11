@@ -12,7 +12,7 @@
 # camelType = function (only log fce has the exception)
 
 #============================================================
-## info
+## script info
 # author:     		
 # version:		
 # description:		
